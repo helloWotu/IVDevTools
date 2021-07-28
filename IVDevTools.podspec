@@ -9,7 +9,8 @@
 Pod::Spec.new do |spec|
   spec.name          = "IVDevTools"
   spec.version       = "1.0.1"
-  spec.summary       = "IVDevTools是Swift编写的开发调试工具，包含日志模块、环境变量两大模块。"
+  spec.summary       = "带界面的iOS开发调试工具"
+  spec.description   = "IVDevTools是Swift编写的带界面的开发调试工具，包含日志模块、环境变量两大模块。"
   spec.homepage      = "https://github.com/GWTimes/IVDevTools"
   spec.license       = { :type => "MIT", :file => "LICENSE" }
   spec.author        = { "JonorZhang" => "zyx1507@163.com" }

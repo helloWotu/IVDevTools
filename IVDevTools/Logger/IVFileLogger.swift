@@ -13,7 +13,7 @@ enum LogContent {
     case url(URL)     // 列表点击进来用url
 }
 
-protocol IVFileLoggerDelegate: class {
+protocol IVFileLoggerDelegate: AnyObject {
     func fileLogger(_ logger: IVFileLogger, didInsert text: String)
 }
 
