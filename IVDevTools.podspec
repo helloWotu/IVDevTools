@@ -8,16 +8,17 @@
 
 Pod::Spec.new do |spec|
   spec.name          = "IVDevTools"
-  spec.version       = "1.0.1"
-  spec.summary       = "带界面的iOS开发调试工具"
-  spec.description   = "IVDevTools是Swift编写的带界面的开发调试工具，包含日志模块、环境变量两大模块。"
+  spec.version       = "1.0.2"
+  spec.summary       = "A lightweight development and debugging tools"
+  spec.description   = "IVDevTools is a lightweight development and debugging tools with a user interface, written in Swift, and consists of two modules, the logging and Environment Variable."
   spec.homepage      = "https://github.com/GWTimes/IVDevTools"
   spec.license       = { :type => "MIT", :file => "LICENSE" }
   spec.author        = { "JonorZhang" => "zyx1507@163.com" }
 
   spec.platform      = :ios, "9.0"
-  spec.source        = { :git => "https://github.com/GWTimes/IVDevTools.git", :tag => "#{spec.version}" }
-  spec.source_files  = "IVDevTools/**/*.{h,m,swift}"
   spec.swift_version = '5.0'
   spec.requires_arc  = true
+  spec.source        = { :git => "https://github.com/GWTimes/IVDevTools.git", :tag => "#{spec.version}" }
+  spec.source_files  = "IVDevTools/**/*.{h,m,swift}"
+  spec.resource_bundle = { "Resource" => "Resource/*.{xcassets,storyboard}" }
 end
