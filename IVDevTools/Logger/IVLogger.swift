@@ -1,6 +1,6 @@
 //
 //  IVLogger.swift
-//  Yoosee
+//  IVLogger
 //
 //  Created by JonorZhang on 2019/4/10.
 //  Copyright © 2019 Tencentcs. All rights reserved.
@@ -109,11 +109,25 @@ fileprivate class Log: NSObject {
     private static var eventObserver: ((IVLogger.Type) -> Void)? = nil
     
     @objc public static func register(_ eventObserver: ((IVLogger.Type) -> Void)? = nil) {
-        IVFileLogger.shared.autoLoggingStandardOutput()
         self.eventObserver = eventObserver
         registerCrashHandler { (crashLog) in
             log(level: .fatal, message: crashLog)
         }
+        
+        if diskSize.free < lowMemoryThreshold {
+            let logs = IVFileLogger.shared.getAllFileURLs(pathExtension: ".log")
+            logs.forEach {
+                IVFileLogger.shared.deleteLogFile($0)
+            }
+        }
+        
+        if diskSize.free < lowMemoryThreshold {
+            insufficientMemory = true
+        } else {
+            IVFileLogger.shared.autoLoggingStandardOutput()
+        }
+
+        log(level: insufficientMemory ? .warning : .info, message: "totalSize: \(Float(diskSize.total) / 1024 / 1024) MB  freeSize: \(Float(diskSize.free) / 1024 / 1024) MB")
     }
 
     @objc public static func log(_ tag: String = "APP", level: Level = .debug, path: String = #file, function: String = #function, line: Int = #line, message: String = "") {
@@ -133,19 +147,15 @@ fileprivate class Log: NSObject {
 
     @objc public static func logMessage(_ message: String?) {
         guard let message = message else { return }
-//#if DEBUG
         if IVLogger.isXcodeRunning {
             print(message)
         } else {
-            serialQueue.async {
-                IVFileLogger.shared.insertText(message)
+            if !insufficientMemory {
+                serialQueue.async {
+                    IVFileLogger.shared.insertText(message)
+                }
             }
         }
-//#else
-//        serialQueue.async {
-//            IVFileLogger.shared.insertText(message)
-//        }
-//#endif
     }
     
     @objc public static var isXcodeRunning: Bool = {
@@ -160,6 +170,20 @@ fileprivate class Log: NSObject {
 
         return isxcode
     }()
+    
+    
+    public typealias DiskSize = (total: UInt, free: UInt)
+    public static var diskSize: DiskSize {
+        if let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last,
+           let attrs = try? FileManager.default.attributesOfFileSystem(forPath: path), !attrs.isEmpty {
+            let totalSize = attrs[.systemSize] as? UInt ?? 0
+            let freeSize = attrs[.systemFreeSize] as? UInt ?? 0
+            return (totalSize, freeSize)
+        }
+        return (0, 0)
+    }
+    private static let lowMemoryThreshold = 500 * 1024 * 1024
+    public static var insufficientMemory: Bool = false
 }
 
 

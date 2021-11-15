@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name          = "IVDevTools"
-  spec.version       = "1.0.2"
+  spec.version       = "1.0.3"
   spec.summary       = "A lightweight development and debugging tools"
   spec.description   = "IVDevTools is a lightweight development and debugging tools with a user interface, written in Swift, and consists of two modules, the logging and Environment Variable."
   spec.homepage      = "https://github.com/GWTimes/IVDevTools"

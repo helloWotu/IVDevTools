@@ -40,7 +40,6 @@ public struct Config: Codable {
             Config(name: "音视频调试", key: "IOT_AV_DEBUG", value: "true", enable: false),
             Config(name: "P2P测试服", key: "IOT_HOST_P2P", value: "TEST", enable: false),
             Config(name: "WEB测试服", key: "IOT_HOST_WEB", value: "TEST", enable: false),
-            Config(name: "VAS测试服", key: "IOT_HOST_VAS", value: "TEST", enable: false),
             Config(name: "云服务ID", key: "IOT_VAS_SERVICE_ID", value: "", enable: false),
             Config(name: "设备类型", key: "IOT_APP_DEV_TYPE", value: "1", enable: false),
         ]
