@@ -33,7 +33,7 @@ public struct Config: Codable {
         }
         
         let defaultCfgs = [
-//            Config(name: "SECRECT_ID", key: "IOT_TEST_SECRECT_ID", value: "", enable: false),
+            Config(name: "SECRECT_ID", key: "IOT_TEST_SECRECT_ID", value: "", enable: false),
 //            Config(name: "SECRECT_KEY", key: "IOT_TEST_SECRECT_KEY", value: "", enable: false),
 //            Config(name: "用户名", key: "IOT_TEST_USER_NAME", value: "", enable: false),
 //            Config(name: "回放策略", key: "IOT_PLAYBACK_STRATEGY", value: "0", enable: false),
