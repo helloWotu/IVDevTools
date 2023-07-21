@@ -33,15 +33,15 @@ public struct Config: Codable {
         }
         
         let defaultCfgs = [
-            Config(name: "SECRECT_ID", key: "IOT_TEST_SECRECT_ID", value: "", enable: false),
-            Config(name: "SECRECT_KEY", key: "IOT_TEST_SECRECT_KEY", value: "", enable: false),
-            Config(name: "用户名", key: "IOT_TEST_USER_NAME", value: "", enable: false),
-            Config(name: "回放策略", key: "IOT_PLAYBACK_STRATEGY", value: "0", enable: false),
-            Config(name: "音视频调试", key: "IOT_AV_DEBUG", value: "true", enable: false),
-            Config(name: "P2P测试服", key: "IOT_HOST_P2P", value: "TEST", enable: false),
-            Config(name: "WEB测试服", key: "IOT_HOST_WEB", value: "TEST", enable: false),
-            Config(name: "云服务ID", key: "IOT_VAS_SERVICE_ID", value: "", enable: false),
-            Config(name: "设备类型", key: "IOT_APP_DEV_TYPE", value: "1", enable: false),
+//            Config(name: "SECRECT_ID", key: "IOT_TEST_SECRECT_ID", value: "", enable: false),
+//            Config(name: "SECRECT_KEY", key: "IOT_TEST_SECRECT_KEY", value: "", enable: false),
+//            Config(name: "用户名", key: "IOT_TEST_USER_NAME", value: "", enable: false),
+//            Config(name: "回放策略", key: "IOT_PLAYBACK_STRATEGY", value: "0", enable: false),
+//            Config(name: "音视频调试", key: "IOT_AV_DEBUG", value: "true", enable: false),
+//            Config(name: "P2P测试服", key: "IOT_HOST_P2P", value: "TEST", enable: false),
+//            Config(name: "WEB测试服", key: "IOT_HOST_WEB", value: "TEST", enable: false),
+//            Config(name: "云服务ID", key: "IOT_VAS_SERVICE_ID", value: "", enable: false),
+//            Config(name: "设备类型", key: "IOT_APP_DEV_TYPE", value: "1", enable: false),
         ]
         for cfg in defaultCfgs {
             if !allCfgs.contains(where: { $0.key == cfg.key }) {
