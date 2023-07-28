@@ -3,7 +3,7 @@
 //  IVLogger
 //
 //  Created by Zhang on 2019/9/7.
-//  Copyright © 2019 JonorZhang. All rights reserved.
+//  Copyright © 2019 tuzy. All rights reserved.
 //
 
 import UIKit

@@ -2,8 +2,8 @@
 //  IVDevTools.h
 //  IVDevTools
 //
-//  Created by JonorZhang on 2019/8/20.
-//  Copyright © 2019 JonorZhang. All rights reserved.
+//  Created by tuzy on 2019/8/20.
+//  Copyright © 2019 tuzy. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

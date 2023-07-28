@@ -2,8 +2,8 @@
 //  CrashManager.swift
 //  IVLogger
 //
-//  Created by JonorZhang on 2019/10/16.
-//  Copyright © 2019 JonorZhang. All rights reserved.
+//  Created by tuzy on 2019/10/16.
+//  Copyright © 2019 tuzy. All rights reserved.
 //
 
 import Foundation
@@ -50,6 +50,7 @@ private func uncaughtExceptionHandler(exception: NSException) {
                         """
     crashHandler?(crash)
     ori_uncaughtExceptionHandler?(exception)
+    exception.raise()
 }
 
 private func signalCrashHandler(signal:Int32) -> Void {

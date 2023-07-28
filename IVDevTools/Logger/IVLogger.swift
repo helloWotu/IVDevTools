@@ -2,8 +2,8 @@
 //  IVLogger.swift
 //  IVLogger
 //
-//  Created by JonorZhang on 2019/4/10.
-//  Copyright © 2019 Tencentcs. All rights reserved.
+//  Created by tuzy on 2019/4/10.
+//  Copyright © 2019 . All rights reserved.
 //
 
 import Foundation

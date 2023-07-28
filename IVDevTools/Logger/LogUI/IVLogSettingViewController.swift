@@ -2,8 +2,8 @@
 //  IVLogSettingViewController.swift
 //  IVLogger
 //
-//  Created by JonorZhang on 2019/10/14.
-//  Copyright © 2019 JonorZhang. All rights reserved.
+//  Created by tuzy on 2019/10/14.
+//  Copyright © 2019 tuzy. All rights reserved.
 //
 
 import UIKit

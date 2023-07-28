@@ -2,8 +2,8 @@
 //  IVFileLogger.swift
 //  IVLogger
 //
-//  Created by JonorZhang on 2019/8/20.
-//  Copyright © 2019 JonorZhang. All rights reserved.
+//  Created by tuzy on 2019/8/20.
+//  Copyright © 2019 tuzy. All rights reserved.
 //
 
 import UIKit
@@ -53,7 +53,7 @@ class IVFileLogger: NSObject {
         }
 
         // 创建日志目录
-        let directoryURL = cachesDir.appendingPathComponent("com.jz.log")
+        let directoryURL = cachesDir.appendingPathComponent("com.iwee.log")
         if !fileManager.fileExists(atPath: directoryURL.path) {
             do {
                 try fileManager.createDirectory( at: directoryURL, withIntermediateDirectories: true)
